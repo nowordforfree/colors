@@ -1,0 +1,104 @@
+#wrapper {
+    background-color: #ddd;
+    height: 100%;
+    left: 0;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#game {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+    min-height: 350px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 85%;
+}
+
+#question span {
+    font: 16px/18px Serif, Verdana, Arial;
+}
+    .asked {
+        background-color: #ddd;
+        font: 20px Serif, Verdana, Arial;
+    }
+
+#timeline {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+#timeline .axis {
+    bottom: 35%;
+    background-color: #cdcdcd;
+    border-radius: 10px;
+    height: 20px;
+    position: relative;
+}
+
+#timeline span.scale {
+    font: 10px monospace;
+    margin-left: 9.2%;
+}
+#timeline span.scale.num {
+    margin-left: 9.2%;
+}
+
+#timeline .pointer {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+}
+
+#answer {
+    bottom: 10%;
+    position: absolute;
+    width: 98%;
+}
+
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+    height: 45px;
+    padding-top: 25px;
+    position: relative;
+    width: 75px;
+}
+    .circle.generic {
+        border: 1px solid;
+        cursor: pointer;
+        margin-left: 5%;
+    }
+
+.circle.generic:first-child {
+    margin-left: 0%;
+}
+
+.circle .caption {
+    font: bold 15px Verdana;
+}
+
+.red {
+    color: red;
+}
+.white {
+    color: white;
+}
+.yellow {
+    color: yellow;
+}
+.green {
+    color: green;
+}
+.black {
+    color: black;
+}
