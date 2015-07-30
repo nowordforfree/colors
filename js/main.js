@@ -1,17 +1,18 @@
 /**
- * Created by dev on 7/29/15.
+ * Created by ozzy on 7/29/15.
  */
 $(function() {
-    var guesscolor = new Game();
-    if (confirm("Are you ready to start the game?")) {
-        clearInterval(interval);
-        guesscolor.start();
-    } else {
-        var interval = setInterval(function () {
-            if (confirm("Ready now?")) {
-                clearInterval(interval);
-                guesscolor.start();
-            }
-        }, 5000);
-    }
+    $('#game').hide();
+    var button = $('<input type="button" value="  Let\'s play!  "/>');
+    $(button)
+        .css({
+            margin:'100px auto',
+        })
+        .click(function() {
+            $(this).remove();
+            var guesscolor = new Game();
+            $('#game').show();
+            guesscolor.start(1);
+        })
+    $('#wrapper').append(button);
 })

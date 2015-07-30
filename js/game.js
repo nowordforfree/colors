@@ -1,29 +1,28 @@
 /**
- * Created by dev on 7/29/15.
+ * Created by ozzy on 7/29/15.
  */
 function Game() {
     this.colors = ['red', 'white', 'yellow', 'green', 'black'];
     this.answers = 0;
     this.pass = 0;
     this.fail = 0;
+    this.questionsAnswered = 0;
     this.totalTime = 0;
-    $('.pointer').css({ left: -($('.pointer')[0].getBoundingClientRect().width / 2) });
 }
 
 Game.prototype.start = function(level) {
     if (!level) {
         level = 1;
     }
-     {
-        this.ask();
-    }
+    this.ask();
 }
 
 Game.prototype.countdownStart = function() {
     this.startTime = performance.now();
     var self = this;
-    $('#timeline .pointer').animate({
-        left: '100%'
+    $('.pointer').css('left', '0%');
+    $('.pointer').animate({
+        left: '98%'
     }, {
         duration: 10000,
         easing: 'linear',
@@ -38,14 +37,29 @@ Game.prototype.countdownStart = function() {
 
 Game.prototype.countdownStop = function() {
     var endTime = performance.now();
-    $('#timeline .pointer').stop();
+    $('.pointer').stop();
+    $('.circle.generic').off('click');
     this.totalTime += endTime - this.startTime;
+}
+
+Game.prototype.end = function() {
+    if (this.questionsAnswered < 20) {
+        this.ask();
+    } else {
+        $('#game').hide();
+        $('#results').show();
+        var summary = $('#results table');
+        $(summary).find('tr:nth-child(1) td:nth-child(2)').text(this.pass);
+        $(summary).find('tr:nth-child(2) td:nth-child(2)').text(this.fail);
+        $(summary).find('tr:nth-child(3) td:nth-child(2)').text(Math.round(this.totalTime) / 1000 + ' sec');
+    }
 }
 
 Game.prototype.ask = function() {
     this.countdownStart();
+    $('.circle.asked').remove();
     var color = this.colors[Math.round(Math.random() * this.colors.length)];
-    $('#question').after('<br><div class="' + color + ' circle asked">' + color + '</div>');
+    $('#question').append('<div class="' + color + ' circle asked">' + color + '</div>');
 
     var self = this;
 
@@ -56,8 +70,7 @@ Game.prototype.ask = function() {
         } else {
             self.fail++;
         }
-        console.log('Correct answers: ' + self.pass);
-        console.log('Incorrect answers: ' + self.fail);
-        console.log('Time spent: ' + Math.round(self.totalTime) / 1000 + ' seconds');
+        self.questionsAnswered++;
+        self.end();
     })
 }

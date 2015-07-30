@@ -1,4 +1,4 @@
-#wrapper {
+body {
     background-color: #ddd;
     height: 100%;
     left: 0;
@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-#game {
+#wrapper {
     border: 1px solid #ddd;
     background-color: #fff;
     border-radius: 5px;
@@ -19,7 +19,9 @@
     text-align: center;
     width: 85%;
 }
-
+#question {
+    margin-bottom: 75px;
+}
 #question span {
     font: 16px/18px Serif, Verdana, Arial;
 }
@@ -29,8 +31,8 @@
     }
 
 #timeline {
-    margin-bottom: 50px;
     text-align: left;
+    position: relative;
 }
 
 #timeline .axis {
@@ -43,10 +45,12 @@
 
 #timeline span.scale {
     font: 10px monospace;
-    margin-left: 9.2%;
+    font-size: 100%;
+    line-height: 1.5;
+    position: absolute;
 }
 #timeline span.scale.num {
-    margin-left: 9.2%;
+    font-size: 75%;
 }
 
 #timeline .pointer {
@@ -101,4 +105,14 @@
 }
 .black {
     color: black;
+}
+
+#results {
+    display: none;
+}
+
+#results table {
+    border: 0;
+    margin: 50px auto;
+    text-align: left;
 }
