@@ -1,19 +1,16 @@
 body {
     background-color: #ddd;
     height: 100%;
-    left: 0;
-    padding: 15px;
-    position: fixed;
-    top: 0;
+    margin: 0;
     width: 100%;
 }
 
 #wrapper {
-    border: 1px solid #ddd;
-    background-color: #fff;
+    background-color: #FB0;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 25px auto;
     min-height: 350px;
+    min-width: 1000px;
     padding: 10px;
     position: relative;
     text-align: center;
@@ -22,60 +19,78 @@ body {
 #question {
     margin-bottom: 75px;
 }
-#question span {
-    font: 16px/18px Serif, Verdana, Arial;
+h1 {
+    font: 45px Serif, Verdana, Arial;
+    margin: 0;
 }
-    .asked {
-        background-color: #ddd;
-        font: 20px Serif, Verdana, Arial;
+    h1.asked {
+        font-size: 130px;
     }
 
 #timeline {
     text-align: left;
     position: relative;
+    margin-bottom: 35px;
 }
 
-#timeline .axis {
-    bottom: 35%;
+.axis {
     background-color: #cdcdcd;
-    border-radius: 10px;
+    display: inline-block;
+    float: left;
     height: 20px;
     position: relative;
+    width: 98%;
 }
 
-#timeline span.scale {
+.bumper {
+    width: 1%;
+}
+.bumper.left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.bumper.right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+span.scale {
     font: 10px monospace;
     font-size: 100%;
     line-height: 1.5;
     position: absolute;
+    top: 100%;
+    z-index: 1;
 }
-#timeline span.scale.num {
+span.scale.num {
     font-size: 75%;
+    top: 30%;
+}
+.scale.labels {
+    display: inline-block;
 }
 
-#timeline .pointer {
-    background-color: #eaeaea;
-    border-radius: 10px;
+.pointer {
     height: 20px;
-    left: 0;
     position: absolute;
     top: 0;
     width: 20px;
 }
-
-#answer {
-    bottom: 10%;
-    position: absolute;
-    width: 98%;
+.pointer .runner {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    left: -50%;
+    z-index: 1;
 }
 
 .circle {
     border-radius: 50%;
     display: inline-block;
-    height: 45px;
-    padding-top: 25px;
+    font: 30px Serif, Verdana, Arial;
+    height: 90px;
+    padding-top: 60px;
     position: relative;
-    width: 75px;
+    width: 150px;
 }
     .circle.generic {
         border: 1px solid;
@@ -85,10 +100,6 @@ body {
 
 .circle.generic:first-child {
     margin-left: 0%;
-}
-
-.circle .caption {
-    font: bold 15px Verdana;
 }
 
 .red {
@@ -115,4 +126,9 @@ body {
     border: 0;
     margin: 50px auto;
     text-align: left;
+}
+.thead {
+    text-align: center;
+    font: 16px Verdana, Arial;
+    font-weight: bold;
 }

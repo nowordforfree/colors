@@ -12,10 +12,21 @@
     <div id="wrapper">
         <div id="game">
             <div id="question">
-                <span>Which color dispayed?</span><br>
+                <h1>Which color dispayed?</h1><br>
             </div>
             <div id="timeline">
-                <div class="axis">
+                <div class="scale labels">
+                    <span class="scale num" style="left: 10%">9</span>
+                    <span class="scale num" style="left: 20%">8</span>
+                    <span class="scale num" style="left: 30%">7</span>
+                    <span class="scale num" style="left: 40%">6</span>
+                    <span class="scale num" style="left: 50%">5</span>
+                    <span class="scale num" style="left: 60%">4</span>
+                    <span class="scale num" style="left: 70%">3</span>
+                    <span class="scale num" style="left: 80%">2</span>
+                    <span class="scale num" style="left: 90%">1</span>
+                </div>
+                <div class="scale">
                     <span class="scale" style="left: 10%">|</span>
                     <span class="scale" style="left: 20%">|</span>
                     <span class="scale" style="left: 30%">|</span>
@@ -25,50 +36,28 @@
                     <span class="scale" style="left: 70%">|</span>
                     <span class="scale" style="left: 80%">|</span>
                     <span class="scale" style="left: 90%">|</span>
-                    <div class="pointer"></div>
                 </div>
-                <span class="scale num" style="left: 10%">9</span>
-                <span class="scale num" style="left: 20%">8</span>
-                <span class="scale num" style="left: 30%">7</span>
-                <span class="scale num" style="left: 40%">6</span>
-                <span class="scale num" style="left: 50%">5</span>
-                <span class="scale num" style="left: 60%">4</span>
-                <span class="scale num" style="left: 70%">3</span>
-                <span class="scale num" style="left: 80%">2</span>
-                <span class="scale num" style="left: 90%">1</span>
+                <div class="axis bumper left">
+                </div>
+                <div class="axis">
+                    <div class="pointer">
+                        <div class="pointer runner"></div>
+                    </div>
+                </div>
+                <div class="axis bumper right">
+                </div>
             </div>
             <div id="answer">
-                <div class="circle generic">
-                    <span class="caption">Red</span>
-                </div>
-                <div class="circle generic">
-                    <span class="caption">White</span>
-                </div>
-                <div class="circle generic">
-                    <span class="caption">Yellow</span>
-                </div>
-                <div class="circle generic">
-                    <span class="caption">Green</span>
-                </div>
-                <div class="circle generic">
-                    <span class="caption">Black</span>
-                </div>
+                <div class="circle generic">Red</div>
+                <div class="circle generic">White</div>
+                <div class="circle generic">Yellow</div>
+                <div class="circle generic">Green</div>
+                <div class="circle generic">Black</div>
             </div>
         </div>
         <div id="results">
             <table>
-                <tr>
-                    <td>Correct answers:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Incorrect answers:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Total time spent:</td>
-                    <td></td>
-                </tr>
+                <tbody></tbody>
             </table>
         </div>
     </div>
